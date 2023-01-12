@@ -1,9 +1,8 @@
 package com_my_hr.domain;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
-public class Employee extends ArrayList<Employee> {
+public class Employee {
 	private String employeeName;
 	private static int cnt = 0;
 	private int employeeId;
@@ -12,7 +11,7 @@ public class Employee extends ArrayList<Employee> {
 	
 	public Employee(String employeeName, LocalDate regDate) {
 		cnt++;
-		this.employeeId = cnt;
+		this.employeeId = cnt - 1;
 		this.employeeName = employeeName;
 		this.regDate = regDate;
 	}
@@ -39,7 +38,7 @@ public class Employee extends ArrayList<Employee> {
 
 	@Override
 	public String toString() {
-		return String.format("%5d %5s %5s\n",
+		return String.format("%6d %10s    %10s",
 				employeeId, employeeName, regDate);
 	}
 }
